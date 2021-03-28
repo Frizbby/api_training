@@ -8,4 +8,12 @@ public class Titi {
         this.name = name;
         this.twitter = twitter;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getTwitter(){
+        return twitter;
+    }
 }
