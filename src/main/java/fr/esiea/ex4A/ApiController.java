@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -17,10 +20,7 @@ public class ApiController {
     public void inscription(@RequestBody UserInfo userInfo) throws InterruptedException{
         System.out.println(userInfo);
         //TimeUnit.SECONDS.sleep(2L);
-
     }
-
-
 
     @GetMapping(path="/api/matches", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Titi> matches(@RequestParam(name="userName") String name, @RequestParam(name="userCountry") String country){
@@ -29,6 +29,4 @@ public class ApiController {
             new Titi("marion","bretagne")
         );
     }
-
-
 }
